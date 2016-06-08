@@ -11,7 +11,11 @@ lazy val restapi = Project("restapi", file("restapi"))
   .enablePlugins(PlayScala)
   .disablePlugins(PlayLayoutPlugin).settings(
   libraryDependencies ++= Seq(
-    `com.typesafe.scala-logging_scala-logging`,
-    `com.typesafe.play`
+    `com.typesafe.scala-logging_scala-logging`
   )
+)
+
+libraryDependencies ++= Seq(
+  `com.typesafe.scala-logging_scala-logging`,
+  `com.typesafe.play`
 )
