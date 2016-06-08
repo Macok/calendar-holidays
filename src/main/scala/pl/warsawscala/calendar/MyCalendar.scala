@@ -58,13 +58,22 @@ case class MyCalendarImpl(code: String) extends MyCalendar {
     }
   }
 
+  def ParseTags(summary: String): List[String] = {
+    if (summary.startsWith("#")) {
+      summary.split("#").zipWithIndex.filter(_._2 % 2 == 0).map(_._1).toList
+    } else {
+      summary.split("#").zipWithIndex.filter(_._2 % 2 == 1).map(_._1).toList
+    }
+  }
+
   /*  def ParseEvents(EventsList: List[GoogleEvent]): List[PlannedEvent] = {
       EventsList.map(e => PlannedEvent(e.startDate, e.endDate, ParseTags(e.summary)))
     }
 
-    def ParseTags(Summary: String): List[String] = {
-      //Parsowanie Tagów
-    }*/
+  def ParseTags(Summary: String): List[String] = {
+    //Parsowanie Tagów
+  }
+  */
 }
 
 case class MyCalendarStub() extends MyCalendar {
